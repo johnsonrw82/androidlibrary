@@ -14,6 +14,10 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
 
     private static final String TAG = "SingleFragmentActivity";
 
+    protected int getLayoutResId() {
+        return R.layout.activity_fragment;
+    }
+
     /**
      * Called when the activity is first created.
      * @param savedInstanceState If the activity is being re-initialized after
@@ -24,7 +28,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate(Bundle) called");
-        setContentView(R.layout.activity_fragment);
+        setContentView(getLayoutResId());
 
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
